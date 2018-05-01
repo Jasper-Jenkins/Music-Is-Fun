@@ -1,0 +1,11 @@
+#songs{
+    width:100%;
+    background-color: black;
+}
+.song-style img{
+    height:200px;
+    width:200px;
+}
+.song-style{
+    width:300px;
+}
