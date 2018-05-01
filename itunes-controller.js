@@ -6,13 +6,13 @@ function ItunesController(){
     var artist = e.target.artist.value;
     itunesService.getMusicByArtist(artist).then(draw); //after get music by artist returns what are you doing with the objects?
   }
- // var songs;
+  var songs;
 
   //Start coding here
   function draw(results){
-    var songs = results;
+    songs = results;
     var template = ''
-    for(var i = 0; i < 10; i++){
+    for(var i = 0; i < 5; i++){
         var song = songs[i];
         template +=`
 
@@ -27,14 +27,14 @@ function ItunesController(){
           </div>
           <audio id="player${i}" src=${song.preview}></audio>
           <div> 
-            <button onclick="document.getElementById('player${i}').play(), app.controllers.itunesCtrl.pauseTunes(${songs})">Play</button> 
+            <button onclick="document.getElementById('player${i}').play(), app.controllers.itunesCtrl.pauseTunes(${i})">Play</button> 
             <button onclick="document.getElementById('player${i}').pause()">Pause</button> 
             <button onclick="document.getElementById('player${i}').volume += 0.1">Vol+ </button> 
             <button onclick="document.getElementById('player${i}').volume -= 0.1">Vol- </button> 
           </div>
         </div>
         `
-       
+     //  debugger
         document.getElementById('songs').innerHTML = template  
     }
   
@@ -42,11 +42,21 @@ function ItunesController(){
   }
   
   
-  this.pauseTunes = function pauseTunes(songs){
-    for(var i =0;i<songs.length)
-    document.getElementById('')
-    console.log("Hey figure this out already")
-  } 
+  this.pauseTunes = function pauseTunes(songsIndex){
+   //debugger
+    
+    for(var i = 0;i<5;i++){
+      //debugger
+      if(i == songsIndex){
+        document.getElementById(`player${songsIndex}`).play();
+      }else{
+        document.getElementById(`player${i}`).pause();
+      }
+        console.log("Hey figure this out already")
+      // debugger
+    } 
+      
+  }
 
   
 }
