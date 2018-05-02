@@ -6,11 +6,11 @@ function ItunesController(){
     var artist = e.target.artist.value;
     itunesService.getMusicByArtist(artist).then(draw); //after get music by artist returns what are you doing with the objects?
   }
-  var songs;
+  //var songs;
 
   //Start coding here
   function draw(results){
-    songs = results;
+    var songs = results;
     var template = ''
     for(var i = 0; i < 5; i++){
         var song = songs[i];
