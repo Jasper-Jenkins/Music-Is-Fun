@@ -19,12 +19,11 @@ function ItunesController(){
            <div class="card song-style">
           <img src="${song.albumArt}" alt="">
           <div class="card-body">
-            <h5 class="card-title">title: ${song.title}</h5>
+            <h5 onclick="document.getElementById('player${i}').play(), app.controllers.itunesCtrl.pauseTunes(${i})" class="card-title">title: ${song.title}</h5>
             <p class="card-text">artist: ${song.artist}</p>
             <p class="card-text">collection: ${song.collection}</p>
             <p class="card-text">price: ${song.price}</p> 
-            <p class="card-text"><small class="text-muted">Hey</small></p>
-          </div>
+           </div>
           <audio id="player${i}" src=${song.preview}></audio>
           <div> 
             <button onclick="document.getElementById('player${i}').play(), app.controllers.itunesCtrl.pauseTunes(${i})">Play</button> 
