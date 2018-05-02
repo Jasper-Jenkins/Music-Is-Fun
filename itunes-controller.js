@@ -12,11 +12,11 @@ function ItunesController(){
   function draw(results){
     var songs = results;
     var template = ''
-    for(var i = 0; i < 5; i++){
+    for(var i = 0; i < 15; i++){
         var song = songs[i];
+        console.log(songs[i])
         template +=`
-
-        <div class="card song-style">
+           <div class="card song-style">
           <img src="${song.albumArt}" alt="">
           <div class="card-body">
             <h5 class="card-title">title: ${song.title}</h5>
