@@ -26,9 +26,9 @@ function ItunesController(){
            </div>
           <audio id="player${i}" src=${song.preview}></audio>
           <div> 
-            <button onclick="document.getElementById('player${i}').play(), app.controllers.itunesCtrl.pauseTunes(${i})">Play</button> 
-            <button onclick="document.getElementById('player${i}').pause()">Pause</button> 
-            <button onclick="document.getElementById('player${i}').volume += 0.1">Vol+ </button> 
+            <div onclick="document.getElementById('player${i}').play(), app.controllers.itunesCtrl.pauseTunes(${i})"><i class="fas fa-play"></i></div> 
+            <div onclick="document.getElementById('player${i}').pause()"><i class="fas fa-pause"></i></div> 
+            <button onclick="document.getElementById('player${i}').volume += 0.1">Vol+ </button>  
             <button onclick="document.getElementById('player${i}').volume -= 0.1">Vol- </button> 
           </div>
         </div>
