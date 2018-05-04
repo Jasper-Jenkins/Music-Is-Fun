@@ -1,7 +1,7 @@
-function ItunesController(){
+function ItunesController() {
   var itunesService = new ItunesService()
   //Do Not Modify the getMusic function
-  this.getMusic = function getMusic(e){
+  this.getMusic = function getMusic(e) {
     e.preventDefault();
     var artist = e.target.artist.value;
     itunesService.getMusicByArtist(artist).then(draw); //after get music by artist returns what are you doing with the objects?
@@ -9,55 +9,55 @@ function ItunesController(){
   //var songs;
 
   //Start coding here
-  function draw(results){
+  function draw(results) {
     var songs = results;
     var template = ''
-    for(var i = 0; i < 15; i++){
-        var song = songs[i];
-        console.log(songs[i])
-        template +=`
+    for (var i = 0; i < 5; i++) {
+      var song = songs[i];
+      console.log(songs[i])
+      template += `
            <div class="card song-style">
-          <img src="${song.albumArt}" alt="">
-          <div class="card-body">
-            <h5 onclick="document.getElementById('player${i}').play(), app.controllers.itunesCtrl.pauseTunes(${i})" class="card-title">title: ${song.title}</h5>
-            <p class="card-text">artist: ${song.artist}</p>
-            <p class="card-text">collection: ${song.collection}</p>
-            <p class="card-text">price: ${song.price}</p> 
-           </div>
-          <audio id="player${i}" src=${song.preview}></audio>
-          <div> 
-            <div onclick="document.getElementById('player${i}').play(), app.controllers.itunesCtrl.pauseTunes(${i})"><i class="fas fa-play"></i></div> 
-            <div onclick="document.getElementById('player${i}').pause()"><i class="fas fa-pause"></i></div> 
-            <button onclick="document.getElementById('player${i}').volume += 0.1">Vol+ </button>  
-            <button onclick="document.getElementById('player${i}').volume -= 0.1">Vol- </button> 
-          </div>
+            <img src="${song.albumArt}" alt="">
+            <div class="card-body">
+              <h5 onclick="document.getElementById('player${i}').play(), app.controllers.itunesCtrl.pauseTunes(${i})" class="card-title">title: ${song.title}</h5>
+              <p class="card-text">artist: ${song.artist}</p>
+              <p class="card-text">collection: ${song.collection}</p>
+              <p class="card-text">price: ${song.price}</p> 
+            </div>
+            <audio id="player${i}" src=${song.preview}></audio>
+            <div> 
+              <div onclick="document.getElementById('player${i}').play(), app.controllers.itunesCtrl.pauseTunes(${i})"><i class="fas fa-play"></i></div> 
+              <div onclick="document.getElementById('player${i}').pause()"><i class="fas fa-pause"></i></div> 
+              <button onclick="document.getElementById('player${i}').volume += 0.1">Vol+ </button>  
+              <button onclick="document.getElementById('player${i}').volume -= 0.1">Vol- </button> 
+            </div>
         </div>
         `
-     //  debugger
-        document.getElementById('songs').innerHTML = template  
+      //  debugger
+      document.getElementById('songs').innerHTML = template
     }
-  
+
     console.log(results)
   }
-  
-  
-  this.pauseTunes = function pauseTunes(songsIndex){
-   //debugger
-    
-    for(var i = 0;i<5;i++){
+
+
+  this.pauseTunes = function pauseTunes(songsIndex) {
+    //debugger
+
+    for (var i = 0; i < 5; i++) {
       //debugger
-      if(i == songsIndex){
+      if (i == songsIndex) {
         document.getElementById(`player${songsIndex}`).play();
-      }else{
+      } else {
         document.getElementById(`player${i}`).pause();
       }
-        console.log("Hey figure this out already")
+      console.log("Hey figure this out already")
       // debugger
-    } 
-      
+    }
+
   }
 
-  
+
 }
 
 
