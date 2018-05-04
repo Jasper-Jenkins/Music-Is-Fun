@@ -20,7 +20,12 @@ body{
 }
 
 .find-music{
-    margin-top: 15vh;
+    margin-top: 2vh;
     margin-bottom: 2vh;
-    background-color:blue;
+    background-color: rgb(114, 138, 218);
+}
+.welcome{
+    color:white;
+    font-size: 5vh;
+    margin-top:2vh;
 }

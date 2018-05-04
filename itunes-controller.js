@@ -12,7 +12,7 @@ function ItunesController() {
   function draw(results) {
     var songs = results;
     var template = ''
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 25; i++) {
       var song = songs[i];
       console.log(songs[i])
       template += `
@@ -25,11 +25,11 @@ function ItunesController() {
               <p class="card-text">price: ${song.price}</p> 
             </div>
             <audio id="player${i}" src=${song.preview}></audio>
-            <div> 
+            <div class="d-flex flex-row justify-content-around"> 
               <div onclick="document.getElementById('player${i}').play(), app.controllers.itunesCtrl.pauseTunes(${i})"><i class="fas fa-play"></i></div> 
               <div onclick="document.getElementById('player${i}').pause()"><i class="fas fa-pause"></i></div> 
-              <button onclick="document.getElementById('player${i}').volume += 0.1">Vol+ </button>  
-              <button onclick="document.getElementById('player${i}').volume -= 0.1">Vol- </button> 
+              <div onclick="document.getElementById('player${i}').volume += 0.1"><i class="fas fa-volume-up">Vol+</i></div>  
+              <div onclick="document.getElementById('player${i}').volume -= 0.1"><i class="fas fa-volume-down">Vol-</i></div> 
             </div>
         </div>
         `
@@ -41,10 +41,10 @@ function ItunesController() {
   }
 
 
-  this.pauseTunes = function pauseTunes(songsIndex) {
+  this.pauseTunes = function pauseTunes(songsIndex, listOfSongs) { //songsIndex:number, listOfSongs:arry
     //debugger
 
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 25; i++) {
       //debugger
       if (i == songsIndex) {
         document.getElementById(`player${songsIndex}`).play();

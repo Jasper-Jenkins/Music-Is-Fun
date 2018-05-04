@@ -13,7 +13,12 @@
 
 <body>
     <div class="container-fluid">
-    <form class="form-inline row d-flex justify-content-center align-items-center find-music" onsubmit="app.controllers.itunesCtrl.getMusic(event)">
+        <div class="row welcome">
+            <div class="col text-center">
+                    <p>Search for your favorite Artist</p>
+                    <p></p></div>
+        </div>
+    <form class="form-inline text-center row d-flex justify-content-center align-items-center find-music" onsubmit="app.controllers.itunesCtrl.getMusic(event)">
         <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
         <div class="form-group ">
             <input type="text" class="form-control" name="artist" placeholder="Artist Name" />
